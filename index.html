@@ -1,42 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Student Information Management System</title>
+  <link rel="nofollow" href=''>
 </head>
 <body>
-  <h2>Student Information Management System</h2>
-  <input type="text" id="studentName" placeholder="Enter student name">
-  <button onclick="addStudent()">Add Student</button>
-  <button onclick="removeStudent()">Remove Last Student</button>
-  <button onclick="displayStudents()">Display All Students</button>
-  <button onclick="showCount()">Show Student Count</button>
-  <button onclick="showStudentAt()">Show Student at Position</button>
-  <button onclick="joinStudents()">Join Student Names</button>
-  <p id="output"></p>
+  <div class="container">
+    <h1>Student Information Management System</h1>
+    
+    <input type="text" id="studentName" placeholder="Enter student name">
+    <button onclick="addStudent()">Add Student</button>
+    
+    <div class="actions">
+      <button onclick="removeLastStudent()">Remove Last Student</button>
+      <button onclick="showTotalStudents()">Show Total Students</button>
+      <button onclick="showStudentAt()">Get Student at Position</button>
+      <button onclick="joinStudents()">Join Student Names</button>
+      <button onclick="checkIfEmpty()">Is Class Empty?</button>
+    </div>
+ 
+    <input type="number" id="studentIndex" placeholder="Enter position (0-based)">
+ 
+    <h2>Student List</h2>
+    <ul id="studentList"></ul>
+ 
+    <div id="output"></div>
+  </div>
+ 
+  <script src="script.js"></script>
 </body>
-
-<script>
-  // Array for adding student names
-  let students = [];
-
-  //Function to add a student - push()
-  function addStudent() {
-    const name = document.getElementById('studentName').value;
-    if (name) {
-      students.push(name);
-      document.getElementById('studentName').value = '';
-      alert(`${name} added.`);
-    } else {
-      alert('Please enter a student name.');
-    }
-  }
-
-  //Function to join a student - join()
-  function joinStudents() {
-    const joinedNames = students.join(', ');
-    alert(`Joined student names: ${joinedNames}`);
-    document.getElementById('output').innerHTML = `Joined student names: ${joinedNames}`;
-    students.join();
-  }
-</script>
 </html>
+ 
