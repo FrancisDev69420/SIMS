@@ -14,4 +14,21 @@
   <button onclick="joinStudents()">Join Student Names</button>
   <p id="output"></p>
 </body>
+
+<script>
+  // Array for adding student names
+  let students = [];
+
+  //Function to add a student - push()
+  function addStudent() {
+    const name = document.getElementById('studentName').value;
+    if (name) {
+      students.push(name);
+      document.getElementById('studentName').value = '';
+      alert(`${name} added.`);
+    } else {
+      alert('Please enter a student name.');
+    }
+  }
+</script>
 </html>
