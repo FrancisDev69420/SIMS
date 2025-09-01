@@ -66,12 +66,11 @@ function showStudentAt() {
 //Function to join a student - join()
 function joinStudents() {
   const joinedNames = students.join(', ');
-  alert(`Joined student names: ${joinedNames}`);
   document.getElementById('output').innerHTML = `Joined student names: ${joinedNames}`;
 }
 
-  // Function to show total number of students - length()
-  function showTotalStudents() {
-      const count = students.length;
-      document.getElementById("output").innerText = `Total Students: ${count}`;
+// Function to show total number of students - length()
+function showTotalStudents() {
+    const count = students.length;
+    document.getElementById("output").innerText = `Total Students: ${count}`;
 }
