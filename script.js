@@ -49,3 +49,9 @@
   });
   document.getElementById("output").innerText = "Displayed all students.";
 }
+
+  //Function to show all total of the students
+  function showTotalStudents() {
+      const count = students.length;
+      document.getElementById("output").innerText = `Total Students: ${count}`;
+}
