@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Information Management System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Student Information Management System</h1>
+    
+    <div class="input-section">
+      <input type="text" id="studentName" placeholder="Enter student name">
+      <button class="primary-btn" onclick="addStudent()">Add Student</button>
+    </div>
+    
+    <div class="actions">
+      <button onclick="removeLastStudent()">Remove Last Student</button>
+      <button onclick="showTotalStudents()">Show Total Students</button>
+      <button onclick="showStudentAt()">Get Student at Position</button>
+      <button onclick="joinStudents()">Join Student Names</button>
+      <button onclick="checkIfEmpty()">Is Class Empty?</button>
+      <button onclick="clearAllStudents()">Clear All Students</button>
+      <button onclick="displayStudents()">Display All Students</button> 
+    </div>
+
+    <div class="position-input">
+      <input type="number" id="studentIndex" placeholder="Enter position (0-based)" min="0">
+    </div>
+
+    <h2>Student List</h2>
+    <ul id="studentList">
+      <div class="empty-state">No students added yet. Add your first student above!</div>
+    </ul>
+
+    <div id="output">Welcome! Start by adding students to your class.</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
