@@ -9,6 +9,8 @@ body {
   background: linear-gradient(135deg, #8B4513 0%, #D2B48C 50%, #F5F5DC 100%);
   min-height: 100vh;
   padding: 20px;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 .container {
@@ -20,6 +22,11 @@ body {
   box-shadow: 0 10px 30px rgba(139, 69, 19, 0.2);
   border: 2px solid #D2B48C;
   animation: fadeIn 1s ease-in-out;
+  backdrop-filter: blur(10px);
+  box-shadow: 
+        0 10px 30px rgba(139, 69, 19, 0.2),
+        0 20px 60px rgba(139, 69, 19, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 h1 {
@@ -28,6 +35,10 @@ h1 {
   margin-bottom: 30px;
   font-size: 2.2em;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  background: linear-gradient(135deg, #8B4513, #D2B48C, #A0522D);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
 }
 
 h2 {
@@ -35,6 +46,7 @@ h2 {
   color: #A0522D;
   margin: 30px 0 15px 0;
   font-size: 1.4em;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
 }
 
 .input-section {
@@ -42,6 +54,7 @@ h2 {
   gap: 10px;
   margin-bottom: 25px;
   flex-wrap: wrap;
+  align-items: flex-end;
 }
 
 input[type="text"], input[type="number"] {
@@ -54,17 +67,23 @@ input[type="text"], input[type="number"] {
   background-color: #FEFEFE;
   transition: all 0.3s ease;
   background: #fffaf0;
+  position: relative;
 }
 
 input[type="text"]:focus, input[type="number"]:focus {
   outline: none;
   border-color: #8B4513;
   box-shadow: 0 0 10px rgba(139, 69, 19, 0.2);
+  box-shadow: 
+        0 0 10px rgba(139, 69, 19, 0.2),
+        0 0 0 3px rgba(139, 69, 19, 0.1);
+      transform: translateY(-1px);
 }
 
 input[type="text"]:hover, input[type="number"]:hover {
   border-color: #A0522D;
   box-shadow: 0 0 8px rgba(160, 82, 45, 0.3);
+  transform: translateY(-1px);
 }
 
 button {
@@ -81,6 +100,7 @@ button {
   box-shadow: 0 4px 8px rgba(139, 69, 19, 0.3);
   position: relative;
   overflow: hidden;
+  user-select: none;
 }
 
 button:hover {
@@ -122,11 +142,16 @@ button:hover::after {
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 10px;
   margin: 25px 0;
+  animation: staggerIn 0.6s ease forwards; 
 }
 
 .position-input {
   margin: 20px 0;
   text-align: center;
+  background: rgba(245, 245, 220, 0.3);
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px solid rgba(210, 180, 140, 0.5);
 }
 
 #studentList {
@@ -137,6 +162,8 @@ button:hover::after {
   border: 2px solid #D2B48C;
   border-radius: 10px;
   background-color: #FEFEFE;
+  scrollbar-width: thin;
+      scrollbar-color: #8B4513 #f5f5dc;
 }
 
 #studentList li {
@@ -149,11 +176,16 @@ button:hover::after {
   color: #654321;
   transition: all 0.3s ease;
   animation: slideIn 0.4s ease forwards;
+  border: 1px solid rgba(210, 180, 140, 0.3);
+      position: relative;
 }
 
 #studentList li:hover {
   background: linear-gradient(135deg, #FAEBD7, #F5F5DC);
   transform: translateX(5px);
+  box-shadow: 
+        0 4px 8px rgba(139, 69, 19, 0.2),
+        0 0 15px rgba(210, 180, 140, 0.3);
 }
 
 #studentList::-webkit-scrollbar {
@@ -168,10 +200,13 @@ button:hover::after {
 #studentList::-webkit-scrollbar-thumb {
   background: #8B4513;
   border-radius: 10px;
+  background: linear-gradient(135deg, #8B4513, #A0522D);
 }
 
 #studentList::-webkit-scrollbar-thumb:hover {
   background: #A0522D;
+  background: linear-gradient(135deg, #A0522D, #D2B48C);
+
 }
 
 #output {
@@ -188,11 +223,16 @@ button:hover::after {
   align-items: center;
   justify-content: center;
   transition: box-shadow 0.3s ease, transform 0.2s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 #output:hover {
   box-shadow: 0 0 15px rgba(139, 69, 19, 0.3);
   transform: scale(1.02);
+  box-shadow: 
+        0 0 15px rgba(139, 69, 19, 0.3),
+        0 0 30px rgba(210, 180, 140, 0.2);
 }
 
 .empty-state {
@@ -201,6 +241,7 @@ button:hover::after {
   font-style: italic;
   padding: 20px;
   animation: pulse 1.5s infinite;
+  position: relative;
 }
 
 @media (max-width: 600px) {
@@ -247,4 +288,5 @@ h1::after, h2::after {
   background: #D2B48C;
   margin: 10px auto 0 auto;
   border-radius: 2px;
+  transition: width 0.3s ease;
 }
