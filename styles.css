@@ -19,6 +19,7 @@ body {
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(139, 69, 19, 0.2);
   border: 2px solid #D2B48C;
+  animation: fadeIn 1s ease-in-out;
 }
 
 h1 {
@@ -52,12 +53,18 @@ input[type="text"], input[type="number"] {
   font-size: 16px;
   background-color: #FEFEFE;
   transition: all 0.3s ease;
+  background: #fffaf0;
 }
 
 input[type="text"]:focus, input[type="number"]:focus {
   outline: none;
   border-color: #8B4513;
   box-shadow: 0 0 10px rgba(139, 69, 19, 0.2);
+}
+
+input[type="text"]:hover, input[type="number"]:hover {
+  border-color: #A0522D;
+  box-shadow: 0 0 8px rgba(160, 82, 45, 0.3);
 }
 
 button {
@@ -72,6 +79,8 @@ button {
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 8px rgba(139, 69, 19, 0.3);
+  position: relative;
+  overflow: hidden;
 }
 
 button:hover {
@@ -84,10 +93,28 @@ button:active {
   transform: translateY(0);
 }
 
+button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  transform: skewX(-20deg);
+  transition: 0.5s;
+}
+
+button:hover::after {
+  left: 100%;
+}
+
 .primary-btn {
   background: linear-gradient(135deg, #D2B48C, #8B4513);
   font-size: 16px;
   min-width: 120px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 .actions {
@@ -121,11 +148,30 @@ button:active {
   font-weight: 500;
   color: #654321;
   transition: all 0.3s ease;
+  animation: slideIn 0.4s ease forwards;
 }
 
 #studentList li:hover {
   background: linear-gradient(135deg, #FAEBD7, #F5F5DC);
   transform: translateX(5px);
+}
+
+#studentList::-webkit-scrollbar {
+  width: 8px;
+}
+
+#studentList::-webkit-scrollbar-track {
+  background: #f5f5dc;
+  border-radius: 10px;
+}
+
+#studentList::-webkit-scrollbar-thumb {
+  background: #8B4513;
+  border-radius: 10px;
+}
+
+#studentList::-webkit-scrollbar-thumb:hover {
+  background: #A0522D;
 }
 
 #output {
@@ -141,6 +187,12 @@ button:active {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+#output:hover {
+  box-shadow: 0 0 15px rgba(139, 69, 19, 0.3);
+  transform: scale(1.02);
 }
 
 .empty-state {
@@ -148,6 +200,7 @@ button:active {
   color: #A0522D;
   font-style: italic;
   padding: 20px;
+  animation: pulse 1.5s infinite;
 }
 
 @media (max-width: 600px) {
@@ -167,4 +220,31 @@ button:active {
   h1 {
     font-size: 1.8em;
   }
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+/* --- Heading accent --- */
+h1::after, h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #D2B48C;
+  margin: 10px auto 0 auto;
+  border-radius: 2px;
 }
