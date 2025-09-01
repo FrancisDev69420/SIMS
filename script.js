@@ -30,3 +30,22 @@
       document.getElementById("output").innerText = "No students to remove.";
     }
   }
+
+  //Function to display all students in the list
+  function displayStudents() {
+      const list = document.getElementById("studentList");
+      list.innerHTML = ""; // clear previous output
+
+    if (students.length === 0) {
+      list.innerHTML = "<div class='empty-state'>No students found. Add a student first!</div>";
+      document.getElementById("output").innerText = "No students to display.";
+    return;
+  }
+
+    students.forEach((student, index) => {
+      let li = document.createElement("li");
+      li.textContent = `${index + 1}. ${student}`;
+      list.appendChild(li);
+  });
+  document.getElementById("output").innerText = "Displayed all students.";
+}
