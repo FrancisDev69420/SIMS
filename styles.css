@@ -6,7 +6,7 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  background: linear-gradient(135deg, #8B4513 0%, #D2B48C 50%, #F5F5DC 100%);
+  background: #1e3a8a;
   min-height: 100vh;
   padding: 20px;
   scroll-behavior: smooth;
@@ -20,22 +20,22 @@ body {
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(139, 69, 19, 0.2);
-  border: 2px solid #D2B48C;
+  border: 2px solid #3b82f6;
   animation: fadeIn 1s ease-in-out;
   backdrop-filter: blur(10px);
   box-shadow: 
-        0 10px 30px rgba(139, 69, 19, 0.2),
-        0 20px 60px rgba(139, 69, 19, 0.1),
+        0 10px 30px rgba(30, 58, 138, 0.2),
+        0 20px 60px rgba(30, 58, 138, 0.1),
         inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 h1 {
   text-align: center;
-  color: #8B4513;
+  color: #1e3a8a;
   margin-bottom: 30px;
   font-size: 2.2em;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-  background: linear-gradient(135deg, #8B4513, #D2B48C, #A0522D);
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -43,7 +43,7 @@ h1 {
 
 h2 {
   text-align: center;
-  color: #A0522D;
+  color: #1d4ed8;
   margin: 30px 0 15px 0;
   font-size: 1.4em;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
@@ -61,28 +61,28 @@ input[type="text"], input[type="number"] {
   flex: 1;
   min-width: 200px;
   padding: 12px 15px;
-  border: 2px solid #D2B48C;
+  border: 2px solid #3b82f6;
   border-radius: 8px;
   font-size: 16px;
   background-color: #FEFEFE;
   transition: all 0.3s ease;
-  background: #fffaf0;
+  background: #f0f9ff;
   position: relative;
 }
 
 input[type="text"]:focus, input[type="number"]:focus {
   outline: none;
-  border-color: #8B4513;
-  box-shadow: 0 0 10px rgba(139, 69, 19, 0.2);
+  border-color: #1e3a8a;
+  box-shadow: 0 0 10px rgba(30, 58, 138, 0.2);
   box-shadow: 
-        0 0 10px rgba(139, 69, 19, 0.2),
-        0 0 0 3px rgba(139, 69, 19, 0.1);
+        0 0 10px rgba(30, 58, 138, 0.2),
+        0 0 0 3px rgba(30, 58, 138, 0.1);
       transform: translateY(-1px);
 }
 
 input[type="text"]:hover, input[type="number"]:hover {
-  border-color: #A0522D;
-  box-shadow: 0 0 8px rgba(160, 82, 45, 0.3);
+  border-color: #1d4ed8;
+  box-shadow: 0 0 8px rgba(29, 78, 216, 0.3);
   transform: translateY(-1px);
 }
 
@@ -91,22 +91,22 @@ button {
   margin: 5px;
   font-size: 14px;
   font-weight: bold;
-  background: linear-gradient(135deg, #8B4513, #A0522D);
+  background: linear-gradient(135deg, #1e3a8a, #1d4ed8);
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 8px rgba(139, 69, 19, 0.3);
+  box-shadow: 0 4px 8px rgba(30, 58, 138, 0.3);
   position: relative;
   overflow: hidden;
   user-select: none;
 }
 
 button:hover {
-  background: linear-gradient(135deg, #A0522D, #8B4513);
+  background: linear-gradient(135deg, #1d4ed8, #1e3a8a);
   transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(139, 69, 19, 0.4);
+  box-shadow: 0 6px 12px rgba(30, 58, 138, 0.4);
 }
 
 button:active {
@@ -130,7 +130,7 @@ button:hover::after {
 }
 
 .primary-btn {
-  background: linear-gradient(135deg, #D2B48C, #8B4513);
+  background: linear-gradient(135deg, #1e3a8a, #1d4ed8);
   font-size: 16px;
   min-width: 120px;
   letter-spacing: 0.5px;
@@ -148,10 +148,14 @@ button:hover::after {
 .position-input {
   margin: 20px 0;
   text-align: center;
-  background: rgba(245, 245, 220, 0.3);
+  background: rgba(219, 234, 254, 0.3);
       padding: 15px;
       border-radius: 10px;
-      border: 1px solid rgba(210, 180, 140, 0.5);
+      border: 1px solid rgba(59, 130, 246, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
 }
 
 #studentList {
@@ -159,33 +163,33 @@ button:hover::after {
   padding: 0;
   max-height: 300px;
   overflow-y: auto;
-  border: 2px solid #D2B48C;
+  border: 2px solid #3b82f6;
   border-radius: 10px;
   background-color: #FEFEFE;
   scrollbar-width: thin;
-      scrollbar-color: #8B4513 #f5f5dc;
+      scrollbar-color: #1e3a8a #dbeafe;
 }
 
 #studentList li {
-  background: linear-gradient(135deg, #F5F5DC, #FAEBD7);
+  background: linear-gradient(135deg, #dbeafe, #f0f9ff);
   padding: 12px 15px;
   margin: 5px;
   border-radius: 8px;
-  border-left: 4px solid #8B4513;
+  border-left: 4px solid #1e3a8a;
   font-weight: 500;
-  color: #654321;
+  color: #1e40af;
   transition: all 0.3s ease;
   animation: slideIn 0.4s ease forwards;
-  border: 1px solid rgba(210, 180, 140, 0.3);
+  border: 1px solid rgba(59, 130, 246, 0.3);
       position: relative;
 }
 
 #studentList li:hover {
-  background: linear-gradient(135deg, #FAEBD7, #F5F5DC);
+  background: linear-gradient(135deg, #f0f9ff, #dbeafe);
   transform: translateX(5px);
   box-shadow: 
-        0 4px 8px rgba(139, 69, 19, 0.2),
-        0 0 15px rgba(210, 180, 140, 0.3);
+        0 4px 8px rgba(30, 58, 138, 0.2),
+        0 0 15px rgba(59, 130, 246, 0.3);
 }
 
 #studentList::-webkit-scrollbar {
@@ -193,28 +197,28 @@ button:hover::after {
 }
 
 #studentList::-webkit-scrollbar-track {
-  background: #f5f5dc;
+  background: #dbeafe;
   border-radius: 10px;
 }
 
 #studentList::-webkit-scrollbar-thumb {
-  background: #8B4513;
+  background: #1e3a8a;
   border-radius: 10px;
-  background: linear-gradient(135deg, #8B4513, #A0522D);
+  background: linear-gradient(135deg, #1e3a8a, #1d4ed8);
 }
 
 #studentList::-webkit-scrollbar-thumb:hover {
-  background: #A0522D;
-  background: linear-gradient(135deg, #A0522D, #D2B48C);
+  background: #1d4ed8;
+  background: linear-gradient(135deg, #1d4ed8, #3b82f6);
 
 }
 
 #output {
   margin-top: 20px;
   padding: 15px;
-  background: linear-gradient(135deg, #F5F5DC, #FAEBD7);
-  color: #654321;
-  border: 2px solid #D2B48C;
+  background: linear-gradient(135deg, #dbeafe, #f0f9ff);
+  color: #1e40af;
+  border: 2px solid #3b82f6;
   border-radius: 10px;
   font-weight: bold;
   text-align: center;
@@ -228,16 +232,16 @@ button:hover::after {
 }
 
 #output:hover {
-  box-shadow: 0 0 15px rgba(139, 69, 19, 0.3);
+  box-shadow: 0 0 15px rgba(30, 58, 138, 0.3);
   transform: scale(1.02);
   box-shadow: 
-        0 0 15px rgba(139, 69, 19, 0.3),
-        0 0 30px rgba(210, 180, 140, 0.2);
+        0 0 15px rgba(30, 58, 138, 0.3),
+        0 0 30px rgba(59, 130, 246, 0.2);
 }
 
 .empty-state {
   text-align: center;
-  color: #A0522D;
+  color: #1d4ed8;
   font-style: italic;
   padding: 20px;
   animation: pulse 1.5s infinite;
@@ -285,7 +289,7 @@ h1::after, h2::after {
   display: block;
   width: 60px;
   height: 3px;
-  background: #D2B48C;
+  background: #3b82f6;
   margin: 10px auto 0 auto;
   border-radius: 2px;
   transition: width 0.3s ease;
